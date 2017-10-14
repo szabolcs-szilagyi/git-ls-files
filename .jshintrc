@@ -1,0 +1,10 @@
+{
+  "curly": false,
+  "eqnull": true,
+  "eqeqeq": true,
+  "undef": true,
+  "node": true,
+  "mocha": true,
+  "globals": {
+  }
+}
