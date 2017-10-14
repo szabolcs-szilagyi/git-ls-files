@@ -16,6 +16,8 @@ function formatExtraGroups (groups) {
 }
 
 module.exports = function gitFiles (options) {
+  options = options || {};
+
   var files = execSync('git ls-files', {
     encoding: 'utf8',
     cwd: options && options.cwd

@@ -42,6 +42,10 @@ describe('git-files', function () {
     expect(result).to.be.an('object');
   });
 
+  it('options are optional', function () {
+    expect(gitFiles).not.to.throw();
+  });
+
   it('gives back some default file groups', function () {
     expect(result).to.have.all.keys('all', 'js', 'test');
   });
