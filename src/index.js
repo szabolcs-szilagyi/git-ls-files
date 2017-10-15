@@ -30,16 +30,19 @@ module.exports = function gitFiles (options) {
   if (!optGroups.js) optGroups.js = JS_RX;
   if (!optGroups.test) optGroups.test = TEST_RX;
   var groups = formatExtraGroups(optGroups);
+  var memo = groups.reduce(function (memo, group) {
+    memo[group[0]] = [];
+    return memo;
+  }, {});
 
   var result = files.reduce(function (sum, file) {
     groups.forEach(function (group) {
       if (!group[1].test(file)) return;
-      if (sum[group[0]]) sum[group[0]].push(file);
-      else sum[group[0]] = [file];
+      sum[group[0]].push(file);
     });
 
     return sum;
-  }, {});
+  }, memo);
 
   result.all = files;
 

@@ -99,4 +99,16 @@ describe('git-files', function () {
       'committed.txt', 'some.test.js', 'some.js', 'staged.txt'
     ]);
   });
+
+  it('custom groups will have empty arrays if they don\'t match', function () {
+    var custom = gitFiles({
+      cwd: TEMP_DIR,
+      groups: {
+        nothingInHere: /^$/
+      }
+    });
+
+    expect(custom.nothingInHere).to.be.an('array');
+    expect(custom.nothingInHere).to.have.lengthOf(0);
+  });
 });
