@@ -4,12 +4,14 @@ module.exports = function(grunt) {
   const ALL_FILES = ['./src/*.js'];
 
   grunt.initConfig({
-    mochaTest: {
-      test: {
+    mocha_istanbul:{
+      coveralls: {
+        src: TEST_FILES, // multiple folders also works
         options: {
-          reporter: 'spec'
-        },
-        src: TEST_FILES
+          coverage: true,
+          excludes: ['*.test.js'],
+          root: './src'
+        }
       }
     },
     jshint: {
@@ -25,6 +27,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['jshint', 'jscs', 'mochaTest']);
+  grunt.registerTask('default', ['jshint', 'jscs', 'mocha_istanbul']);
   grunt.registerTask('test', 'default');
 };
