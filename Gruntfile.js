@@ -14,6 +14,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     jshint: {
       default: {
         options: {
@@ -22,6 +23,7 @@ module.exports = function(grunt) {
         src: ALL_FILES
       }
     },
+
     jscs: {
       src: ALL_FILES
     }
