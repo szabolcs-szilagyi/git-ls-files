@@ -1,4 +1,4 @@
-# git-files [![Build Status](https://travis-ci.org/szabolcs-szilagyi/git-files.svg?branch=master)](https://travis-ci.org/szabolcs-szilagyi/git-files)
+# git-files [![Build Status](https://travis-ci.org/szabolcs-szilagyi/git-files.svg?branch=master)](https://travis-ci.org/szabolcs-szilagyi/git-files) [![Coverage Status](https://coveralls.io/repos/github/szabolcs-szilagyi/git-ls-files/badge.svg?branch=master)](https://coveralls.io/github/szabolcs-szilagyi/git-ls-files?branch=master)
 
 The package uses the `git ls-files` command to list all the files that are in your version control system.
 It will give three default groups:
