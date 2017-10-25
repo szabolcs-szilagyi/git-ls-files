@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     mocha_istanbul:{
       coveralls: {
-        src: TEST_FILES, // multiple folders also works
+        src: TEST_FILES,
         options: {
           coverage: true,
           excludes: ['*.test.js'],

@@ -1,18 +1,15 @@
 sudo: false
 language: node_js
 node_js:
-  - 0.12
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
+- 0.12
+- 4
+- 5
+- 6
+- 7
+- 8
 
-env:
-  global:
-    secure: "Pru1r0ZxCdEjizPVMs+0ojqed0Xm8LuZDBSg/00Tgz3obMZJNApxlT3LXRkJA7sM3buM2uK7kHZdsQKusS+EfdElCEBrWkboBExb2CdFYaX+MEoxq7fZduIYuE6Kh1avJob82tLycRXMa7QFP8oQ5YQ0bYBv926sTUg1w8SqOBR/uWCM2HUHzaPnhHeu2ccsvySs/xTBDA1nBd8nAEQRuUW9sKgrcHg8FTH5R6crH8BEh1vr5V9xN7iKQ8K/rBeXZPCFWUoozTQvG9uXYxTx+QLxab0wDZQwf7Eik356m5cbWOANTj7mcH/hv4AXGlcmq4++fQNFaYUAYdK/NGOI9re8MAvTwNTwk3zoLbVIfOV9ujElE1pjdf0xgiwj7clwB4pS9SJzgh9hIroE69RRdgXlXdQjmZckNefrv5y9QxldVvzDDVPvGKA8nF+mebQWf4fU3JjpqUiUmwbwck6CjWKeD/l4DGhBCfG50NsrF4pJvFI+vwe/CA8O5fZ/+sYTkd6NeLBQ7dZ3qc29AGf1ciH8KiHQvNrl5D1PVhDM4cVQ93IAFHkw9CLzIFvd2HwJFPa6GVEAJspnlVCGxpAIxWREjYpBDJYHVUc3WZqqRTvt1nVXj6sXiT9oAMM4bo9qzFeAsInw6ez+OI8Jr806TcTv6XwwkHqzLS/aNv5VU5A="
-
-before_install: npm install -g grunt-cli
+before_install:
+- npm install -g grunt-cli
 
 after_success:
-  - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
+- 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
