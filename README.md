@@ -1,4 +1,4 @@
-# git-files [![Build Status](https://travis-ci.org/szabolcs-szilagyi/git-files.svg?branch=master)](https://travis-ci.org/szabolcs-szilagyi/git-files) [![Coverage Status](https://coveralls.io/repos/github/szabolcs-szilagyi/git-ls-files/badge.svg?branch=master)](https://coveralls.io/github/szabolcs-szilagyi/git-ls-files?branch=master)
+# git-ls-files [![Build Status](https://travis-ci.org/szabolcs-szilagyi/git-ls-files.svg?branch=master)](https://travis-ci.org/szabolcs-szilagyi/git-ls-files) [![Coverage Status](https://coveralls.io/repos/github/szabolcs-szilagyi/git-ls-files/badge.svg?branch=master)](https://coveralls.io/github/szabolcs-szilagyi/git-ls-files?branch=master)
 
 The package uses the `git ls-files` command to list all the files that are in your version control system.
 It will give three default groups:
@@ -25,8 +25,8 @@ So with this little package one can list and group all the important files in a 
 
 Following the example from stackoverflow, one with this package can do the following:
 ```
-const gitFiles = require('git-files');
-const files = gitFiles();
+const gitLsFiles = require('git-ls-files');
+const files = gitLsFiles();
 const config = {
     jshint: {
         scripts: files.js
@@ -45,8 +45,8 @@ Of course the above can be used for build or for zipping together deployment pac
 
 ## Example usage
 ```
-const gitFiles = require('git-files');
-const files = gitFiles({
+const gitLsFiles = require('git-ls-files');
+const files = gitLsFiles({
   cwd: './',
   groups: {
     myCustomGroup: /.*awesomeFiles.js$/,
