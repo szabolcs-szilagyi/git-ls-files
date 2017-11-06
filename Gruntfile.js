@@ -1,12 +1,12 @@
+var FILES = require('./src')();
+
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
-  const TEST_FILES = ['./src/*.test.js'];
-  const ALL_FILES = ['./src/*.js'];
 
   grunt.initConfig({
     mocha_istanbul:{
       coveralls: {
-        src: TEST_FILES,
+        src: FILES.test,
         options: {
           coverage: true,
           excludes: ['*.test.js'],
@@ -20,12 +20,12 @@ module.exports = function(grunt) {
         options: {
           jshintrc: true,
         },
-        src: ALL_FILES
+        src: FILES.js
       }
     },
 
     jscs: {
-      src: ALL_FILES
+      src: FILES.js
     }
   });
 
