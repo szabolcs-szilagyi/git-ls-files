@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         src: FILES.test,
         options: {
           coverage: true,
-          excludes: FILES.test,
+          excludes: ['**/*.test.js'],
           root: './src'
         }
       }
