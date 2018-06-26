@@ -19,10 +19,13 @@ function setup () {
   exec('echo haha > some.test.js');
   exec('echo hoho > some.js');
   exec('git init');
+  exec('git config user.email foo@example.com');
+  exec('git config user.name "Gigiri Tikiri"');
   exec('git add .');
   exec('git commit --no-gpg-sign -am test');
   exec('echo bello > staged.txt');
   exec('git add .');
+  exec('echo foobar > baz.txt');
 }
 
 function teardown () {
@@ -110,5 +113,17 @@ describe('git-files', function () {
 
     expect(custom.nothingInHere).to.be.an('array');
     expect(custom.nothingInHere).to.have.lengthOf(0);
+  });
+});
+
+describe('git-staged-files', function () {
+  it('should list only files that are staged for the next commit', function () {
+    var custom = gitFiles({
+      cwd: TEMP_DIR,
+      staged: true,
+    });
+
+    expect(custom.all).to.not.have.members(['baz.txt']);
+    expect(custom.all).to.have.members(['staged.txt']);
   });
 });

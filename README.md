@@ -63,6 +63,9 @@ Current Working Directory - this will tell the method, in which directory it sho
 ## groups [object]
 For each key defined in the groups, the lib will try to find matching files. The value for they hey should either be a *method* or a *regexp*.
 
+## staged [boolean]
+List only files staged for next commit
+
 ## Result
 It will be an object with list of files at the keys. For example I got the following, when ran the [above example](#example-usage) against this repo:
 ```
