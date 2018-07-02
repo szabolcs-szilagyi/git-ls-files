@@ -18,7 +18,11 @@ function formatExtraGroups (groups) {
 module.exports = function gitFiles (options) {
   options = options || {};
 
-  var files = execSync('git ls-files', {
+  var cmd = options.staged ?
+    'git diff --diff-filter ACMR --cached --name-only' :
+    'git ls-files';
+
+  var files = execSync(cmd, {
     encoding: 'utf8',
     cwd: options && options.cwd
   })
